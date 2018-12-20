@@ -1,0 +1,75 @@
+[global]
+    # font = Arimo 10
+    font = Terminus 8
+    
+    allow_markup = yes
+    format = "%s\n%b"
+
+    sort = no
+    indicate_hidden = no
+    alignment = right
+    show_age_threshold = -1
+    word_wrap = yes
+    ignore_newline = no
+    geometry = "600x5-20+20"
+    shrink = yes
+    idle_threshold = 120
+    follow = mouse
+    
+    # Should a notification popped up from history be sticky or timeout
+    # as if it would normally do.
+    sticky_history = no
+    # Maximum amount of notifications kept in history
+    history_length = 20
+    # Display indicators for URLs (U) and actions (A).
+    show_indicators = yes
+    
+    line_height = 0
+    separator_height = 3
+    separator_color = frame
+    padding = 8
+    horizontal_padding = 8
+    
+    # Print a notification on startup.
+    startup_notification = false
+    
+    # dmenu path.
+    dmenu = /usr/bin/dmenu -p dunst:
+    
+    # Browser for opening urls in context menu.
+    browser = /usr/bin/google-chrome
+
+[frame]
+    width = 3
+    color = "#a7e22e"
+
+[shortcuts]
+    # [modifier+][modifier+]...key
+    # modifiers: "ctrl", "mod1" (the alt-key), "mod2", "mod3", and "mod4"
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+shift+period
+
+[urgency_low]
+    background = "#272822"
+    foreground = "#f1ebeb"
+    timeout = 5
+
+[urgency_normal]
+    background = "#272822"
+    foreground = "#8fc029"
+    timeout = 5
+
+[urgency_critical]
+    background = "#272822"
+    foreground = "#dc2566"
+    timeout = 0
+
+[volume]
+    summary = *sound*
+    background = "#a7e22e"
+    foreground = "#272822"
+    timeout = 1
+
+# vim: ft=cfg

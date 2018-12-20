@@ -1,0 +1,11 @@
+#include ".xcolors/monokai"
+
+URxvt*font: xft:Terminus:pixelsize=12,xft:gothic
+URxvt*boldFont:
+
+
+URxvt*cursorBlink:       true
+URxvt*geometry:          80x24
+URxvt*internalBorder:    12
+URxvt*scrollBar:         false
+URxvt*imLocale:          en_US.UTF-8
