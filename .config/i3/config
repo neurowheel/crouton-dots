@@ -7,17 +7,18 @@ set $mod Mod4
 set_from_resource $back background
 set_from_resource $dark color8
 set_from_resource $light color15
-set_from_resource $acc1 color4
-set_from_resource $acc2 color10
+set_from_resource $green color10
+set_from_resource $blue color12
 
-set $dmenufont Terminus:pixelsize=12
-font pango:Terminus 12px
+set $dmenufont Terminus:size=8
+font pango:Terminus 8
 # }}}
 
 # STARTING PROGRAMS {{{
 
 # wallpaper
-exec_always --no-startup-id hsetroot -cover ~/Downloads/bg/1523045586588.jpg
+# exec_always --no-startup-id hsetroot -cover ~/Downloads/bg/1482028898331.jpg
+exec_always --no-startup-id hsetroot -solid '#90cbf7'
 
 # touchpad and cursor
 exec_always --no-startup-id synclient HorizTwoFingerScroll=1 TapButton1=1 TapButton2=3 TapButton3=2
@@ -34,7 +35,7 @@ exec_always --no-startup-id dunst
 bindsym $mod+g exec slock
 
 # launching programs
-bindsym $mod+d exec dmenu_run -fn '$dmenufont' -nf '$acc1' -nb '$back' -sf '$back' -sb '$acc1' -i
+bindsym $mod+d exec dmenu_run -fn '$dmenufont' -nf '$blue' -nb '$back' -sf '$back' -sb '$blue' -i
 bindsym $mod+Return exec urxvtcd
 # }}}
 
@@ -67,10 +68,10 @@ for_window [window_role="pop-up"] floating enable
 for_window [class="mpv"] floating enable
 
 # window colors         border  backgr. text    indicator
-client.focused          $acc2   $acc2   $back   $dark
+client.focused          $blue   $blue   $back   $dark
 client.focused_inactive $dark   $dark   $back   $dark
 client.unfocused        $dark   $dark   $back   $dark
-client.urgent           $acc2   $acc2   $back   $acc2
+client.urgent           $blue   $blue   $back   $blue
 client.background       $back
 # }}}
 
@@ -85,8 +86,8 @@ bindsym $mod+Down  focus down
 bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
 bindsym $mod+space focus mode_toggle
-bindsym $mod+p focus parent
-bindsym $mod+Shift+p focus child
+bindsym $mod+plus  focus parent
+bindsym $mod+minus focus child
 # }}}
 
 # MOVE FOCUSED WINDOW {{{
@@ -108,8 +109,7 @@ bindsym $mod+a scratchpad show
 # }}}
 
 # CHANGING LAYOUT {{{
-bindsym $mod+v split v
-bindsym $mod+Shift+v split h
+bindsym $mod+v split toggle
 bindsym $mod+e layout toggle split
 bindsym $mod+t layout toggle
 bindsym $mod+f fullscreen
@@ -130,7 +130,6 @@ bindsym $mod+9           workspace number 9
 bindsym $mod+0           workspace number 10
 bindsym $mod+z           workspace back_and_forth
 bindsym $mod+Tab         workspace next
-bindsym $mod+Shift+Tab   workspace prev
 # move container to
 bindsym $mod+Shift+1     move container to workspace number 1; workspace number 1
 bindsym $mod+Shift+2     move container to workspace number 2; workspace number 2
@@ -143,6 +142,11 @@ bindsym $mod+Shift+8     move container to workspace number 8; workspace number 
 bindsym $mod+Shift+9     move container to workspace number 9; workspace number 9
 bindsym $mod+Shift+0     move container to workspace number 10; workspace number 10
 bindsym $mod+Shift+z     move container to workspace back_and_forth; workspace back_and_forth
+bindsym $mod+Shift+Tab   move container to workspace next; workspace next
+# multimonitor
+# fake-outputs 683x768+0+0,683x768+683+0 # just for testing
+bindsym $mod+bracketleft  move workspace to output left
+bindsym $mod+bracketright move workspace to output right
 # }}}
 
 # EXIT I3 (logs you out of your X session) {{{
@@ -151,6 +155,7 @@ mode "exit" {
     bindsym n mode "default"
 
     bindsym Escape mode "default"
+    bindsym Return mode "default"
 }
 bindsym $mod+Shift+e mode "exit"
 # }}}
@@ -176,6 +181,7 @@ mode "resize" {
     bindsym Shift+Right move right
 
     bindsym Escape mode "default"
+    bindsym Return mode "default"
 }
 bindsym $mod+r mode "resize"
 # }}}
@@ -195,12 +201,12 @@ bar {
     status_command "echo '{\"version\":1}'; echo '['; echo '[],'; exec conky"
     separator_symbol " :: "
     colors {
-    	statusline	$acc2
+    	statusline	$blue
 		background	$back
         # colors           border backgr text
-        focused_workspace  $acc2  $acc2  $back
-        inactive_workspace $back  $back  $acc2
-        urgent_workspace   $acc1  $acc1  $back
+        focused_workspace  $blue  $blue  $back
+        inactive_workspace $back  $back  $blue
+        urgent_workspace   $green $green $back
     }
 }
 # }}}

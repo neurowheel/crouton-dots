@@ -1,6 +1,6 @@
 #include ".xcolors/monokai"
 
-URxvt*font: xft:Terminus:pixelsize=12,xft:gothic
+URxvt*font: xft:Terminus:size=8,xft:gothic
 URxvt*boldFont:
 
 URxvt*cursorBlink:       true
