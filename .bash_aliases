@@ -59,16 +59,3 @@ function mktar() { tar cvzf "${1%%/}.tgz"  "${1%%/}/"; }
 # from http://tldp.org/LDP/abs/html/sample-bashrc.html
 # Create a ZIP archive of a file or folder.
 function mkzip() { zip -r "${1%%/}.zip" "$1" ; }
-
-function dlc() {
-    local cmu_folder="$HOME/Downloads/cmu"
-    wgetpdf -nc --cut-dirs 4 -P "$cmu_folder/17214" https://www.cs.cmu.edu/~charlie/courses/17-214/2018-fall/
-}
-
-function hw () {
-    scp -r andrew:~/private/15150/asgn/hw/$1 ~/Downloads
-}
-
-function lab () {
-    scp -r andrew:~/private/15150/asgn/lab/$1 ~/Downloads
-}
