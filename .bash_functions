@@ -9,3 +9,16 @@ croutonpatch() {
     sudo patch -i ~/.config/crouton/xbindkeysrc.patch /etc/crouton/xbindkeysrc.scm
     sudo patch -i ~/.config/crouton/croutontriggerd.patch /usr/local/bin/croutontriggerd
 }
+
+alias dlup="rclone -P copyto --include '{bg,images,backup}/**' $HOME/Downloads/ drive:misc"
+
+backup() {
+    local path="/media/removable/SD Card"
+    rclone -P sync "$path/cmu" drive:cmu/backup
+    rclone -P sync "$path/music" dropbox:music
+}
+
+function cmu-dl() {
+    local cmu_folder="/media/removable/SD Card/cmu"
+    wgetpdf -nc --cut-dirs 4 -P "$cmu_folder/17214" https://www.cs.cmu.edu/~charlie/courses/17-214/2018-fall/
+}
