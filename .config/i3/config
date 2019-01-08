@@ -32,7 +32,7 @@ exec_always --no-startup-id urxvtcd -name scratchpad -e ranger
 exec_always --no-startup-id dunst
 
 # screenlocker
-bindsym $mod+g exec slock
+bindsym $mod+g exec slock croutonpowerd --suspend
 
 # launching programs
 bindsym $mod+d exec dmenu_run -fn '$dmenufont' -nf '$blue' -nb '$back' -sf '$back' -sb '$blue' -i
