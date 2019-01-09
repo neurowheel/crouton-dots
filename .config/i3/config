@@ -29,7 +29,8 @@ for_window [instance="scratchpad"] floating enable, move window to scratchpad
 exec --no-startup-id urxvtcd -name scratchpad -e ranger
 
 # screenlocker
-bindsym $mod+g exec slock croutonpowerd --suspend
+bindsym $mod+g exec slock
+bindsym $mod+Shift+g exec slock croutonpowerd --suspend
 
 # launching programs
 bindsym $mod+d exec dmenu_run -fn '$dmenufont' -nf '$blue' -nb '$back' -sf '$back' -sb '$blue' -i
