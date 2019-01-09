@@ -17,19 +17,16 @@ font pango:Terminus 8
 # STARTING PROGRAMS {{{
 
 # wallpaper
-# exec_always --no-startup-id hsetroot -cover ~/Downloads/bg/1482028898331.jpg
-exec_always --no-startup-id hsetroot -solid '#90cbf7'
+# exec --no-startup-id hsetroot -cover ~/Downloads/bg/1482028898331.jpg
+exec --no-startup-id hsetroot -solid '#90cbf7'
 
 # touchpad and cursor
-exec_always --no-startup-id synclient HorizTwoFingerScroll=1 TapButton1=1 TapButton2=3 TapButton3=2
-exec_always --no-startup-id unclutter -root -idle 1 -jitter 10
+exec --no-startup-id synclient HorizTwoFingerScroll=1 TapButton1=1 TapButton2=3 TapButton3=2
+exec --no-startup-id unclutter -root -idle 1 -jitter 10
 
 # dropdown ranger
 for_window [instance="scratchpad"] floating enable, move window to scratchpad
-exec_always --no-startup-id urxvtcd -name scratchpad -e ranger
-
-# dunst
-exec_always --no-startup-id dunst
+exec --no-startup-id urxvtcd -name scratchpad -e ranger
 
 # screenlocker
 bindsym $mod+g exec slock croutonpowerd --suspend
@@ -42,8 +39,8 @@ bindsym $mod+Return exec urxvtcd
 # CROUTON SPECIFIC KEYBINDINGS {{{
 
 # Delete key replacement (Alt + BackSpace)
-exec_always --no-startup-id xmodmap -e 'keycode 108 = Mode_switch'
-exec_always --no-startup-id xmodmap -e 'keysym BackSpace = BackSpace BackSpace Delete'
+exec --no-startup-id xmodmap -e 'keycode 108 = Mode_switch'
+exec --no-startup-id xmodmap -e 'keysym BackSpace = BackSpace BackSpace Delete'
 # Brightness Controls
 bindsym F6 exec brightness down
 bindsym F7 exec brightness up
@@ -187,6 +184,8 @@ bindsym $mod+r mode "resize"
 # }}}
 
 # MISC KEYBINDINGS {{{
+# sticky toggle
+bindsym $mod+s sticky toggle
 # kill focused window
 bindsym $mod+q kill
 # reload the configuration file
