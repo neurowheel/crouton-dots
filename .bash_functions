@@ -3,7 +3,9 @@ blocks() {
     printf "\n%s\n%s\n\n" "$(pcs)" "$(pcs '1;')"
 }
 
-alias fsize="printf '\33]50;%s\007' 'xft:VL Gothic:pixelsize=$1'"
+fsize() {
+    printf "\33]50;%s\007" "xft:VL Gothic:size=$1"
+}
 
 croutonpatch() {
     sudo patch -i ~/.config/crouton/xbindkeysrc.patch /etc/crouton/xbindkeysrc.scm
