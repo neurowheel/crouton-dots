@@ -12,11 +12,16 @@ alias la='ls -A'
 alias lh='ls -d .*'
 alias cd..='cd ..'
 
-# shortcuts
+# pure laziness
 alias q='exit'
 alias r='ranger'
 alias v='vim'
 alias sshx='ssh -X'
+alias ga='git add'
+alias gc='git commit'
+alias gd='git diff'
+alias gl='git log --pretty=format:"%h %s"'
+alias gs='git status' # note: conflicts with ghostscript but whatever
 
 # package management
 alias autodispel='sudo apt-get autoremove'
