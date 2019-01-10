@@ -5,7 +5,6 @@ set page-padding             0
 set render-loading           false
 set smooth-scroll            true
 set scroll-full-overlap      0.05
-set recolor                  true
 
 # DARK
 set completion-bg            "#48483e"

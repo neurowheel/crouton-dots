@@ -7,8 +7,9 @@ set $mod Mod4
 set_from_resource $back background
 set_from_resource $dark color8
 set_from_resource $light color15
-set_from_resource $green color10
-set_from_resource $blue color12
+set_from_resource $urgent color9
+set_from_resource $border color10
+set_from_resource $bar    color12
 
 set $dmenufont Terminus:size=8
 font pango:Terminus 8
@@ -17,8 +18,7 @@ font pango:Terminus 8
 # STARTING PROGRAMS {{{
 
 # wallpaper
-# exec --no-startup-id hsetroot -cover ~/Downloads/bg/1482028898331.jpg
-exec --no-startup-id hsetroot -solid '#90cbf7'
+exec_always --no-startup-id hsetroot -cover ~/Downloads/bg/1482028898331.jpg
 
 # touchpad and cursor
 exec --no-startup-id synclient HorizTwoFingerScroll=1 TapButton1=1 TapButton2=3 TapButton3=2
@@ -33,7 +33,7 @@ bindsym $mod+g exec slock
 bindsym $mod+Shift+g exec slock croutonpowerd --suspend
 
 # launching programs
-bindsym $mod+d exec dmenu_run -fn '$dmenufont' -nf '$blue' -nb '$back' -sf '$back' -sb '$blue' -i
+bindsym $mod+d exec dmenu_run -fn '$dmenufont' -nf '$border' -nb '$back' -sf '$back' -sb '$border' -i
 bindsym $mod+Return exec urxvtcd
 # }}}
 
@@ -65,11 +65,11 @@ hide_edge_borders smart
 for_window [window_role="pop-up"] floating enable
 for_window [class="mpv"] floating enable
 
-# window colors         border  backgr. text    indicator
-client.focused          $blue   $blue   $back   $dark
-client.focused_inactive $dark   $dark   $back   $dark
-client.unfocused        $dark   $dark   $back   $dark
-client.urgent           $blue   $blue   $back   $blue
+# window colors         border  backgr. text  indicator
+client.focused          $border $border $back $light
+client.focused_inactive $dark   $dark   $back $dark
+client.unfocused        $dark   $dark   $back $dark
+client.urgent           $urgent $urgent $back $dark
 client.background       $back
 # }}}
 
@@ -84,8 +84,8 @@ bindsym $mod+Down  focus down
 bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
 bindsym $mod+space focus mode_toggle
-bindsym $mod+plus  focus parent
-bindsym $mod+minus focus child
+bindsym $mod+p     focus parent
+bindsym $mod+c     focus child
 # }}}
 
 # MOVE FOCUSED WINDOW {{{
@@ -201,12 +201,12 @@ bar {
     status_command "echo '{\"version\":1}'; echo '['; echo '[],'; exec conky"
     separator_symbol " :: "
     colors {
-    	statusline	$blue
+    	statusline	$bar
 		background	$back
-        # colors           border backgr text
-        focused_workspace  $blue  $blue  $back
-        inactive_workspace $back  $back  $blue
-        urgent_workspace   $green $green $back
+        # colors           bar     backgr  text
+        focused_workspace  $back   $back   $bar
+        inactive_workspace $back   $back   $dark
+        urgent_workspace   $back   $back   $urgent
     }
 }
 # }}}
