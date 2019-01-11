@@ -160,23 +160,23 @@ bindsym $mod+Shift+e mode "exit"
 
 # RESIZE WINDOW (you can also use the mouse for that) {{{
 mode "resize" {
-    bindsym h     resize shrink width  10 px or 10 ppt
-    bindsym j     resize grow   height 10 px or 10 ppt
-    bindsym k     resize shrink height 10 px or 10 ppt
-    bindsym l     resize grow   width  10 px or 10 ppt
-    bindsym Left  resize shrink width  10 px or 10 ppt
-    bindsym Down  resize grow   height 10 px or 10 ppt
-    bindsym Up    resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow   width  10 px or 10 ppt
+    bindsym h     resize shrink width  80 px or 10 ppt
+    bindsym j     resize grow   height 40 px or 10 ppt
+    bindsym k     resize shrink height 40 px or 10 ppt
+    bindsym l     resize grow   width  80 px or 10 ppt
+    bindsym Left  resize shrink width  80 px or 10 ppt
+    bindsym Down  resize grow   height 40 px or 10 ppt
+    bindsym Up    resize shrink height 40 px or 10 ppt
+    bindsym Right resize grow   width  80 px or 10 ppt
 
-    bindsym Shift+h     move left
-    bindsym Shift+j     move down
-    bindsym Shift+k     move up
-    bindsym Shift+l     move right
-    bindsym Shift+Left  move left
-    bindsym Shift+Down  move down
-    bindsym Shift+Up    move up
-    bindsym Shift+Right move right
+    bindsym Shift+h     move left  80 px
+    bindsym Shift+j     move down  40 px
+    bindsym Shift+k     move up    40 px
+    bindsym Shift+l     move right 80 px
+    bindsym Shift+Left  move left  40 px
+    bindsym Shift+Down  move down  40 px
+    bindsym Shift+Up    move up    80 px
+    bindsym Shift+Right move right 80 px
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
