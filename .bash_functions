@@ -12,12 +12,11 @@ croutonpatch() {
     sudo patch -i ~/.config/crouton/croutontriggerd.patch /usr/local/bin/croutontriggerd
 }
 
-alias dlup="rclone -P copyto --include '{bg,images,backup}/**' $HOME/Downloads/ drive:misc"
+alias dlup="rclone -P copyto --include '{bg,images,dots}/**' $HOME/Downloads/ drive:misc"
 
 backup() {
     local path="/media/removable/SD Card"
     rclone -P sync "$path/cmu" drive:cmu/backup
-    rclone -P sync "$path/music" dropbox:music
 }
 
 function cmu-dl() {
