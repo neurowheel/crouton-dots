@@ -31,11 +31,14 @@ alias dpbs="dpkg-query -Wf '\${Installed-Size}\t\${Package}\n' | sort -n"
 alias gaze='apt-cache search'
 
 # misc
-alias yt-mp3='youtube-dl --ignore-config --extract-audio --audio-format mp3'
+alias mp4tomp3='for i in *.mp4 ; do ffmpeg -n -i "$i" "${i%.*}.mp3"; done'
+alias wget4ch='wget -nd -nH -r -l 1 -H -D i.4cdn.org -A png,gif,jpg,jpeg -R "*s*"'
 alias wgetpdf='wget -e robots=off -nv -r -l 1 -nH -A pdf'
+alias yt-av='youtube-dl --ignore-config --extract-audio --audio-format=mp3 --format=mp4 -k'
+alias yt-mp3='youtube-dl --ignore-config --extract-audio --audio-format mp3'
 
 # from http://tldp.org/LDP/abs/html/sample-bashrc.html
-function extract()
+extract()
 {
     if [ -f $1 ] ; then
         case $1 in
@@ -59,8 +62,8 @@ function extract()
 
 # from http://tldp.org/LDP/abs/html/sample-bashrc.html
 # Creates an archive (*.tar.gz) from given directory.
-function mktar() { tar cvzf "${1%%/}.tgz"  "${1%%/}/"; }
+mktar() { tar cvzf "${1%%/}.tgz"  "${1%%/}/"; }
 
 # from http://tldp.org/LDP/abs/html/sample-bashrc.html
 # Create a ZIP archive of a file or folder.
-function mkzip() { zip -r "${1%%/}.zip" "$1" ; }
+mkzip() { zip -r "${1%%/}.zip" "$1" ; }

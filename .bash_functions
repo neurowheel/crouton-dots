@@ -14,12 +14,12 @@ croutonpatch() {
 
 alias dlup="rclone -P copyto --include '{bg,images,dots}/**' $HOME/Downloads/ drive:misc"
 
-backup() {
+cmu-ul() {
     local path="/media/removable/SD Card"
-    rclone -P sync "$path/cmu" drive:cmu/backup
+    rclone -P copy "$path/cmu" drive:cmu
 }
 
-function cmu-dl() {
+cmu-dl() {
     local cmu_folder="/media/removable/SD Card/cmu"
     wgetpdf -nc --cut-dirs 4 -P "$cmu_folder/17214" https://www.cs.cmu.edu/~charlie/courses/17-214/2018-fall/
 }
