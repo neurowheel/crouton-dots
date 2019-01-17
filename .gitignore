@@ -9,6 +9,7 @@
 !.config/ranger/rc.conf
 !.config/ranger/rifle.conf
 !.config/ranger/scope.sh
+!.config/sxiv/exec/key-handler
 !.config/zathura/zathurarc
 !.gitignore
 !.profile
