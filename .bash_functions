@@ -21,5 +21,10 @@ cmu-ul() {
 
 cmu-dl() {
     local cmu_folder="/media/removable/SD Card/cmu"
-    wgetpdf -nc --cut-dirs 4 -P "$cmu_folder/17214" https://www.cs.cmu.edu/~charlie/courses/17-214/2018-fall/
+    wgetpdf -nc --cut-dirs 1 -P "$cmu_folder/18491" http://course.ece.cmu.edu/~ece491/homework.html
+    wgetpdf -nc -nd -P "$cmu_folder/18491/lectures" http://course.ece.cmu.edu/~ece491/lectures.html
+    wgetpdf -nd -nc -P "$cmu_folder/DDG" http://brickisland.net/DDGSpring2019/
+    printf "\nRetrieved 18-491 and DDG materials.\n\
+    For 18349, 24104, and 39245, see canvas.\n\
+    For 15462 see the course website.\n"
 }
