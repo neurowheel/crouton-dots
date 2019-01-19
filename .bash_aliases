@@ -1,11 +1,5 @@
 # general aliases
 
-# color support
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
 # more ls, cd aliases
 alias ll='ls -hal'
 alias la='ls -A'
@@ -13,29 +7,14 @@ alias lh='ls -d .*'
 alias cd..='cd ..'
 
 # pure laziness
+alias v='vim'
 alias q='exit'
 alias r='ranger'
-alias v='vim'
-alias sshx='ssh -X'
 alias ga='git add'
 alias gc='git commit'
 alias gd='git diff'
 alias gl='git log --pretty=format:"%h %s"'
 alias gs='git status' # note: conflicts with ghostscript but whatever
-
-# package management
-alias autodispel='sudo apt-get autoremove'
-alias cast='sudo apt-get install'
-alias dispel='sudo apt-get purge'
-alias dpbs="dpkg-query -Wf '\${Installed-Size}\t\${Package}\n' | sort -n"
-alias gaze='apt-cache search'
-
-# misc
-alias mp4tomp3='for i in *.mp4 ; do ffmpeg -n -i "$i" "${i%.*}.mp3"; done'
-alias wget4ch='wget -nd -nH -r -l 1 -H -D i.4cdn.org -A png,gif,jpg,jpeg -R "*s*"'
-alias wgetpdf='wget -e robots=off -nv -r -l 1 -nH -A pdf'
-alias yt-av='youtube-dl --ignore-config --extract-audio --audio-format=mp3 --format=mp4 -k'
-alias yt-mp3='youtube-dl --ignore-config --extract-audio --audio-format mp3'
 
 # from http://tldp.org/LDP/abs/html/sample-bashrc.html
 extract()
@@ -67,3 +46,15 @@ mktar() { tar cvzf "${1%%/}.tgz"  "${1%%/}/"; }
 # from http://tldp.org/LDP/abs/html/sample-bashrc.html
 # Create a ZIP archive of a file or folder.
 mkzip() { zip -r "${1%%/}.zip" "$1" ; }
+
+# misc
+alias wget4ch='wget -nd -nH -r -l 1 -H -D i.4cdn.org -A png,gif,jpg,jpeg -R "*s*"'
+alias wgetpdf='wget -e robots=off -nv -r -l 1 -nH -A pdf'
+alias yt-mp3='youtube-dl --ignore-config --extract-audio --audio-format mp3'
+
+# rclone aliases
+alias dsremove="find . -name '.DS_Store' -type f -delete"
+alias rclone="rclone -P"
+alias dlup="rclone copyto --include '{bg,images,dots}/**' $HOME/Downloads/ drive:misc"
+alias cmu-copyup="rclone copy $HOME/cmu drive:cmu"
+alias cmu-syncup="rclone sync $HOME/cmu drive:cmu"

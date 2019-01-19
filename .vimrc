@@ -57,6 +57,8 @@ nnoremap <C-H> <C-W><C-H>
 
 " OTHER NICE THINGS {{{
 au FileType text set nonumber               " if plaintext, no line numbers
+au FileType text set ts=2 sts=2 sw=2    " is plaintext, tab = 2 sp
+au FileType c,cpp set ts=2 sts=2 sw=2    " is plaintext, tab = 2 sp
 nnoremap <F3> :w<CR>|                       " one tap save (normal)
 inoremap <silent> <F3> <C-o>:silent w<CR>|  " one tap save (insert)
 nnoremap <silent> // :noh<return>|          " clear highlight
