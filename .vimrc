@@ -34,13 +34,6 @@ set ignorecase smartcase                    " ignore case if no capitals
 set hlsearch incsearch                      " highlight search
 " }}}
 
-" FOLDS {{{
-nnoremap <space> za| vnoremap <space> zf|   " convenient folding
-set foldenable foldmethod=manual            " enable folding
-set foldlevelstart=3                        " open most folds by default
-set foldnestmax=10                          " 10 nested fold max
-" }}}
-
 " MOVEMENT {{{
 nnoremap j gj| noremap k gk|                " move by visual line
 nnoremap <Down> gj| noremap <Up> gk|
@@ -63,10 +56,6 @@ inoremap <silent> <F3> <C-o>:silent w<CR>|  " one tap save (insert)
 nnoremap <silent> // :noh<return>|          " clear highlight
 set mouse=a                                 " heresy
 set pastetoggle=<F4>                        " paste toggle
-if has('gui_running')
-    set guifont=Inconsolata:h10
-    colorscheme morning
-endif
 nnoremap <F5> :so ~/.vimrc<CR>|             " source vimrc
 " vim:foldmethod=marker:foldlevel=1
 " }}}
