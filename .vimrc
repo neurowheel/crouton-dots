@@ -45,6 +45,8 @@ set foldnestmax=10                          " 10 nested fold max
 nnoremap j gj| noremap k gk|                " move by visual line
 nnoremap <Down> gj| noremap <Up> gk|
 inoremap <Down> <C-o>gj| inoremap <Up> <C-o>gk
+nnoremap <C-n> :bnext<CR>                   " buffer movements
+nnoremap <C-p> :bprevious<CR>
 " }}}
 
 " SPLITS {{{
