@@ -2,9 +2,11 @@
 !.bash_aliases
 !.bash_functions
 !.bashrc
-!.config/mpv/mpv.conf
 !.config/mpv/input.conf
+!.config/mpv/mpv.conf
+!.config/ranger/rc.conf
 !.gitignore
 !.profile
 !.ssh/config
+!.tmux.conf
 !.vimrc
