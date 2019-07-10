@@ -50,6 +50,13 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " }}}
 
+" STATUSLINE {{{
+set laststatus=2
+set stl=%f\ %h%w%m%r\%=[%{&ff}]%y[%p%%]\ %l:%-3c " fake lightline
+" e.g. options.txt [Help][Preview][-][RO] [unix][help][80%] 6987:7__
+" e.g. src/main.cpp [+]                     [unix][cpp][64%] 636:77_
+" }}}
+
 " OTHER NICE THINGS {{{
 nnoremap <F3> :w<CR>|                       " one tap save (normal)
 inoremap <silent> <F3> <C-o>:silent w<CR>|  " one tap save (insert)
