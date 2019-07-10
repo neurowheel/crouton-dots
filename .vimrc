@@ -38,13 +38,13 @@ set hlsearch incsearch                      " highlight search
 nnoremap j gj| noremap k gk|                " move by visual line
 nnoremap <Down> gj| noremap <Up> gk|
 inoremap <Down> <C-o>gj| inoremap <Up> <C-o>gk
-nnoremap <C-n> :bnext<CR>                   " buffer movements
+nnoremap <C-n> :bnext<CR>|                  " buffer movements
 nnoremap <C-p> :bprevious<CR>
 " }}}
 
 " SPLITS {{{
 set splitright splitbelow                   " splits to below and right
-nnoremap <C-J> <C-W><C-J>|                  " movement
+nnoremap <C-J> <C-W><C-J>|                  " movement between splits
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
@@ -57,5 +57,10 @@ nnoremap <silent> // :noh<return>|          " clear highlight
 set mouse=a                                 " heresy
 set pastetoggle=<F4>                        " paste toggle
 nnoremap <F5> :so ~/.vimrc<CR>|             " source vimrc
+nnoremap === yyp<S-v>r=|                    " underline
+nnoremap --- yyp<S-v>r-|                    " underline
+if filereadable(expand('~/.vimrc_local'))
+    source ~/.vimrc_local
+endif
 " vim:foldmethod=marker:foldlevel=1
 " }}}
