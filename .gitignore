@@ -7,6 +7,5 @@
 !.config/ranger/rc.conf
 !.gitignore
 !.profile
-!.ssh/config
 !.tmux.conf
 !.vimrc
