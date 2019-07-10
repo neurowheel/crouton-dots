@@ -24,12 +24,12 @@ set breakindent                             " visual lines indented
 " }}}
 
 " COLORS {{{
-set t_Co=16                                 " 16 colors
+set t_Co=16 bg=dark                         " 16 colors, dark bg
 syntax on                                   " syntax highlighting
+highlight Folded ctermfg=White
 " }}}
 
 " SEARCH {{{
-highlight Search ctermfg=Black
 set ignorecase smartcase                    " ignore case if no capitals
 set hlsearch incsearch                      " highlight search
 " }}}
