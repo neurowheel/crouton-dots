@@ -10,11 +10,15 @@ alias cd..='cd ..'
 alias v='vim'
 alias q='exit'
 alias r='ranger'
-alias ga='git add'
-alias gc='git commit'
+alias ta='tmux attach'
+alias gr='grep -r'
+
+# lazy git
+alias gb='git branch -vv'
+alias gc='git checkout'
 alias gd='git diff'
-alias gl='git log --pretty=format:"%h %s"'
-alias gs='git status' # note: conflicts with ghostscript but whatever
+alias gl='git log --oneline'
+alias gs='git status'
 
 # from http://tldp.org/LDP/abs/html/sample-bashrc.html
 extract()
