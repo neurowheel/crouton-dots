@@ -66,6 +66,10 @@ set pastetoggle=<F4>                        " paste toggle
 nnoremap <F5> :so ~/.vimrc<CR>|             " source vimrc
 nnoremap === yyp<S-v>r=|                    " underline
 nnoremap --- yyp<S-v>r-|                    " underline
+noremap <space> <nop>
+let mapleader=" "
+nnoremap <leader>w :set wrap!<cr>|          " toggle wrap
+nnoremap <leader><space> :ls<CR>:b<Space>|  " why cycle when you can fly
 if filereadable(expand('~/.vimrc_local'))
     source ~/.vimrc_local
 endif
