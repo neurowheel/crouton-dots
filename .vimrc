@@ -58,8 +58,6 @@ set stl=%f\ %h%w%m%r\%=[%{&ff}]%y[%p%%]\ %l:%-3c " fake lightline
 " }}}
 
 " OTHER NICE THINGS {{{
-nnoremap <F3> :w<CR>|                       " one tap save (normal)
-inoremap <silent> <F3> <C-o>:silent w<CR>|  " one tap save (insert)
 nnoremap <silent> // :noh<return>|          " clear highlight
 set mouse=a                                 " heresy
 set pastetoggle=<F4>                        " paste toggle
@@ -70,6 +68,7 @@ noremap <space> <nop>
 let mapleader=" "
 nnoremap <leader>w :set wrap!<cr>|          " toggle wrap
 nnoremap <leader><space> :ls<CR>:b<Space>|  " why cycle when you can fly
+nnoremap <leader>s :update<CR>|             " quick save
 if filereadable(expand('~/.vimrc_local'))
     source ~/.vimrc_local
 endif
