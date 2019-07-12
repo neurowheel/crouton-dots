@@ -2,6 +2,7 @@
 set autoindent shiftround                   " smart indent
 set backspace=indent,eol,start              " saner backspace
 set display=lastline                        " show last line
+set hidden                                  " sneaky buffer action
 set hlsearch incsearch                      " highlight search
 set ignorecase smartcase                    " ignore case if no capitals
 set linebreak                               " saner word wrap
