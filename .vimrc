@@ -1,76 +1,48 @@
-" BASIC STUFF {{{
-set nocompatible                            " modern vim
+" be sensible
+set autoindent shiftround                   " smart indent
 set backspace=indent,eol,start              " saner backspace
-set encoding=utf-8 fileencoding=utf-8       " encoding
-set fileformats=unix,dos,mac                " newlines
-set lazyredraw ttyfast                      " speed up vim
-set noerrorbells novisualbell t_vb=         " turn off bells
-set noswapfile                              " rm *.swp
-set number ruler                            " line numbers
-set tm=500                                  " timeout length
-set wildmenu wildmode=longest,list          " tab completion
-set wildignorecase                          " with case insensitivity
-set wrap linebreak                          " word wrap
 set display=lastline                        " show last line
-" }}}
-
-" INDENT {{{
-set ts=4 sts=4 shiftwidth=4                 " 1 tab = 4 sp
-set expandtab                               " expand tabs into spaces
-set shiftround                              " snap indent
-set autoindent                              " smart indent
-filetype indent on                          " smarter indent
-set breakindent                             " visual lines indented
-" }}}
-
-" COLORS {{{
-set t_Co=16 bg=dark                         " 16 colors, dark bg
-syntax on                                   " syntax highlighting
-highlight Folded ctermfg=White
-" }}}
-
-" SEARCH {{{
-set ignorecase smartcase                    " ignore case if no capitals
 set hlsearch incsearch                      " highlight search
-" }}}
+set ignorecase smartcase                    " ignore case if no capitals
+set linebreak                               " saner word wrap
+set mouse=a                                 " heresy
+set noswapfile                              " rm *.swp
+set number                                  " line numbers
+set splitright splitbelow                   " natural split directions
+set wildmenu wildignorecase                 " case insensitive tab completion
+filetype plugin indent on
+syntax enable
 
-" MOVEMENT {{{
-nnoremap j gj| noremap k gk|                " move by visual line
-nnoremap <Down> gj| noremap <Up> gk|
-inoremap <Down> <C-o>gj| inoremap <Up> <C-o>gk
-nnoremap <C-n> :bnext<CR>|                  " buffer movements
-nnoremap <C-p> :bprevious<CR>
-" }}}
+" tiny tweaks
+set softtabstop=4 shiftwidth=4 expandtab     " use four spaces
+set t_Co=16 bg=dark                          " fix colors
+highlight Folded ctermfg=White
+noremap <space> <nop>
+let mapleader=" "                            " map space to leader
 
-" SPLITS {{{
-set splitright splitbelow                   " splits to below and right
+" statusline
+set laststatus=2
+set statusline=%f\ %h%w%m%r\%=[%{&ff}]%y[%p%%]\ %l:%-3c
+" options.txt [Help][Preview][-][RO]        [unix][help][80%] 6987:7
+" src/main.cpp [+]                          [unix][cpp][64%] 636:101
+
+" movement bindings
+nnoremap j gj| nnoremap k gk|               " move by visual line
 nnoremap <C-J> <C-W><C-J>|                  " movement between splits
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-" }}}
+nnoremap <silent><leader>j :bn<cr>
+nnoremap <silent><leader>k :bp<cr>|         " i want to ride my bicycle
+nnoremap <leader><space> :ls<cr>:b<space>|  " but why cycle when you can fly?
 
-" STATUSLINE {{{
-set laststatus=2
-set stl=%f\ %h%w%m%r\%=[%{&ff}]%y[%p%%]\ %l:%-3c " fake lightline
-" e.g. options.txt [Help][Preview][-][RO] [unix][help][80%] 6987:7__
-" e.g. src/main.cpp [+]                     [unix][cpp][64%] 636:77_
-" }}}
-
-" OTHER NICE THINGS {{{
-nnoremap <silent> // :noh<return>|          " clear highlight
-set mouse=a                                 " heresy
-set pastetoggle=<F4>                        " paste toggle
-nnoremap <F5> :so ~/.vimrc<CR>|             " source vimrc
-nnoremap === yyp<S-v>r=|                    " underline
-nnoremap --- yyp<S-v>r-|                    " underline
-noremap <space> <nop>
-let mapleader=" "
+" other nice things
+set pastetoggle=<F4>                        " toggle paste
+nnoremap <F5> :so ~/.vimrc<cr>|             " source vimrc
+nnoremap <silent> // :noh<cr>|              " clear highlight
+nnoremap <leader>s :update<cr>|             " save if modified
 nnoremap <leader>w :set wrap!<cr>|          " toggle wrap
-nnoremap <leader><space> :ls<CR>:b<Space>|  " why cycle when you can fly
-nnoremap <leader>s :update<CR>|             " quick save
+nnoremap === yyp<S-v>r=|                    " underline quickly
 if filereadable(expand('~/.vimrc_local'))
     source ~/.vimrc_local
 endif
-" vim:foldmethod=marker:foldlevel=1
-" }}}
