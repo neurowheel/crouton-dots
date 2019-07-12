@@ -37,6 +37,8 @@ nnoremap <silent><leader>k :bp<cr>|         " i want to ride my bicycle
 nnoremap <leader><space> :ls<cr>:b<space>|  " but why cycle when you can fly?
 
 " other nice things
+nnoremap <F3> :w<CR>|                       " one tap save (normal)
+inoremap <silent> <F3> <C-o>:silent w<CR>|  " one tap save (insert)
 set pastetoggle=<F4>                        " toggle paste
 nnoremap <F5> :so ~/.vimrc<cr>|             " source vimrc
 nnoremap <silent> // :noh<cr>|              " clear highlight
