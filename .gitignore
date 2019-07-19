@@ -5,6 +5,7 @@
 !.config/conky/conky.conf
 !.config/dunst/dunstrc
 !.config/i3/config
+!.config/mpv/input.conf
 !.config/mpv/mpv.conf
 !.config/ranger/rc.conf
 !.config/ranger/rifle.conf
@@ -13,7 +14,7 @@
 !.config/zathura/zathurarc
 !.gitignore
 !.profile
-!.ssh/config
+!.tmux.conf
 !.vimrc
 !.xcolors/
 !.Xdefaults

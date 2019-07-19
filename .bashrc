@@ -13,7 +13,7 @@ PS1='\[\033[01;32m\]\w\[\033[00m\] '
 # history, completion, ETC
 ############################################################################
 
-HISTCONTROL=ignoredups
+HISTCONTROL=ignoreboth
 HISTSIZE=100000 HISTFILESIZE=200000
 HISTIGNORE="ls:exit:q"
 shopt -s histappend # append to the history file, don't overwrite it
