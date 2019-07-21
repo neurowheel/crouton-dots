@@ -1,0 +1,18 @@
+--- /etc/crouton/xbindkeysrc.scm	2018-12-28 23:37:30.364326989 -0800
++++ xbindkeysrc.scm	2018-12-28 23:33:22.090321991 -0800
+@@ -7,11 +7,11 @@
+ ; Cycle chroots. On most systems, this is handled by croutontriggerd.
+ ; On freon, we have to do it ourselves since we currently grab the event device.
+ (if (access? "/sys/class/tty/tty0/active" F_OK) (begin
+-    (xbindkey '(control shift alt F1) "")
+-    (xbindkey '(control shift alt F2) "")
++    (xbindkey '(control alt Left) "")
++    (xbindkey '(control alt Right) "")
+ ) (begin
+-    (xbindkey '(control shift alt F1) "xte 'keyup F1'; croutoncycle prev")
+-    (xbindkey '(control shift alt F2) "xte 'keyup F2'; croutoncycle next")
++    (xbindkey '(control alt Left) "xte 'keyup Left'; croutoncycle prev")
++    (xbindkey '(control alt Right) "xte 'keyup Right'; croutoncycle next")
+ ))
+ 
+ ; Extra bindings that must only be activated in chroot X11

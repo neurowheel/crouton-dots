@@ -1,0 +1,46 @@
+--- /usr/local/bin/croutontriggerd	2018-12-28 23:37:30.273326987 -0800
++++ croutontriggerd	2018-12-28 23:33:03.662321000 -0800
+@@ -278,12 +278,10 @@ STATE_DOWN=1
+ STATE_UP=0
+ KEY_LEFTCTRL=29
+ KEY_LEFTALT=56
+-KEY_LEFTSHIFT=42
+ KEY_RIGHTCTRL=97
+ KEY_RIGHTALT=100
+-KEY_RIGHTSHIFT=54
+-KEY_F1=59
+-KEY_F2=60
++KEY_LEFT=105
++KEY_RIGHT=106
+ 
+ EVENT_DEV_POLL=15
+ 
+@@ -331,22 +329,20 @@ while :; do
+     sleep "$EVENT_DEV_POLL"
+ done | unbuffered_awk "
+     function update() {
+-        c = lc || rc; s = ls || rs; a = la || ra
+-        if (!cmd && c && s && a && p) {
++        c = lc || rc; a = la || ra
++        if (!cmd && c && a && p) {
+             cmd = \"p\"
+-        } else if (!cmd && c && s && a && n) {
++        } else if (!cmd && c && a && n) {
+             cmd = \"n\"
+-        } else if (cmd && !c && !s && !a && !p && !n) {
++        } else if (cmd && !c && !a && !p && !n) {
+             system(\"/usr/local/bin/croutoncycle \" cmd)
+             cmd = \"\"
+         }
+     }
+     $TYPE == $TYPE_EV_KEY && $KEY == $KEY_LEFTCTRL   { lc = $STATE; update() }
+-    $TYPE == $TYPE_EV_KEY && $KEY == $KEY_LEFTSHIFT  { ls = $STATE; update() }
+     $TYPE == $TYPE_EV_KEY && $KEY == $KEY_LEFTALT    { la = $STATE; update() }
+     $TYPE == $TYPE_EV_KEY && $KEY == $KEY_RIGHTCTRL  { rc = $STATE; update() }
+-    $TYPE == $TYPE_EV_KEY && $KEY == $KEY_RIGHTSHIFT { rs = $STATE; update() }
+     $TYPE == $TYPE_EV_KEY && $KEY == $KEY_RIGHTALT   { ra = $STATE; update() }
+-    $TYPE == $TYPE_EV_KEY && $KEY == $KEY_F1         {  p = $STATE; update() }
+-    $TYPE == $TYPE_EV_KEY && $KEY == $KEY_F2         {  n = $STATE; update() }
++    $TYPE == $TYPE_EV_KEY && $KEY == $KEY_LEFT       {  p = $STATE; update() }
++    $TYPE == $TYPE_EV_KEY && $KEY == $KEY_RIGHT      {  n = $STATE; update() }
+ "

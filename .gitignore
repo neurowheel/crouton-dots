@@ -3,6 +3,8 @@
 !.bash_functions
 !.bashrc
 !.config/conky/conky.conf
+!.config/crouton/croutontriggerd.patch
+!.config/crouton/xbindkeysrc.patch
 !.config/dunst/dunstrc
 !.config/i3/config
 !.config/mpv/input.conf
