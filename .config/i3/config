@@ -22,6 +22,7 @@ exec_always --no-startup-id hsetroot -cover ~/Downloads/bg/1482028898331.jpg
 
 # touchpad and cursor
 exec --no-startup-id synclient HorizTwoFingerScroll=1 TapButton1=1 TapButton2=3 TapButton3=2
+exec --no-startup-id synclient VertScrollDelta=-75 HorizScrollDelta=-75
 exec --no-startup-id unclutter -root -idle 1 -jitter 10
 
 # dropdown ranger
