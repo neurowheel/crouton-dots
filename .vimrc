@@ -28,7 +28,6 @@ set statusline=%f\ %h%w%m%r\%=[%{&ff}]%y[%p%%]\ %l:%-3c
 " src/main.cpp [+]                          [unix][cpp][64%] 636:101
 
 " movement bindings
-nnoremap j gj| nnoremap k gk|               " move by visual line
 nnoremap <C-J> <C-W><C-J>|                  " movement between splits
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -43,9 +42,6 @@ inoremap <silent> <F3> <C-o>:silent w<CR>|  " one tap save (insert)
 set pastetoggle=<F4>                        " toggle paste
 nnoremap <F5> :so ~/.vimrc<cr>|             " source vimrc
 nnoremap <silent> // :noh<cr>|              " clear highlight
-nnoremap <leader>s :update<cr>|             " save if modified
-nnoremap <leader>w :set wrap!<cr>|          " toggle wrap
-nnoremap === yyp<S-v>r=|                    " underline quickly
 if filereadable(expand('~/.vimrc_local'))
     source ~/.vimrc_local
 endif
