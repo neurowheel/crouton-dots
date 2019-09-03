@@ -2,6 +2,7 @@
 set autoindent shiftround                   " smart indent
 set backspace=indent,eol,start              " saner backspace
 set display=lastline                        " show last line
+set formatoptions+=j                        " join without comment character
 set hidden                                  " sneaky buffer action
 set hlsearch incsearch                      " highlight search
 set ignorecase smartcase                    " ignore case if no capitals
@@ -18,6 +19,7 @@ syntax enable
 set softtabstop=4 shiftwidth=4 expandtab     " use four spaces
 set t_Co=16 bg=dark                          " fix colors
 highlight Folded ctermfg=White
+highlight LineNr ctermfg=DarkGray
 noremap <space> <nop>
 let mapleader=" "                            " map space to leader
 
