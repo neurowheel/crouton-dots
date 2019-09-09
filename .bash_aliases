@@ -52,7 +52,7 @@ mktar() { tar cvzf "${1%%/}.tgz"  "${1%%/}/"; }
 mkzip() { zip -r "${1%%/}.zip" "$1" ; }
 
 # misc
-alias wget4ch='wget -nd -nH -r -l 1 -H -D i.4cdn.org -A png,gif,jpg,jpeg -R "*s*"'
+alias wget4ch='wget -nd -nH -r -l 1 -H -D is2.4chan.org -A png,gif,jpg,jpeg'
 alias wgetpdf='wget -e robots=off -nv -r -l 1 -nH -A pdf'
 alias yt-mp3='youtube-dl --ignore-config --extract-audio --audio-format mp3'
 
