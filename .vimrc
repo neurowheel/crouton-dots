@@ -28,3 +28,13 @@ highlight LineNr ctermfg=DarkGray
 " mappings
 nnoremap <space><space> :b <C-d>
 nnoremap <silent><BS> :b#<CR>
+
+" plugins
+call plug#begin('~/.vim/plugged')
+    Plug 'romainl/vim-qf'
+    Plug 'romainl/vim-qlist'
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-eunuch'
+    Plug 'tpope/vim-repeat'
+    Plug 'tpope/vim-unimpaired'
+call plug#end()
