@@ -56,6 +56,9 @@ alias wget4ch='wget -nd -nH -r -l 1 -H -D is2.4chan.org -A png,gif,jpg,jpeg'
 alias wgetpdf='wget -e robots=off -nv -r -l 1 -nH -A pdf'
 alias yt-mp3='youtube-dl --ignore-config --extract-audio --audio-format mp3'
 
+# temporary
+alias p1='ssh -Y -t jagu@unix6.andrew.cmu.edu "cd ~/private/p1; tmux attach || tmux"'
+
 # rclone aliases
 alias dsremove="find . -name '.DS_Store' -type f -delete"
 alias rclone="rclone -P"
