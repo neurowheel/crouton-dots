@@ -17,7 +17,7 @@ alias gr='grep -r'
 alias gb='git branch -vv'
 alias gc='git checkout'
 alias gd='git diff'
-alias gl='git log --oneline'
+alias gl='git log --pretty=format:"%C(yellow)%h %C(green)%an %C(reset)%s"'
 alias gs='git status'
 
 # from http://tldp.org/LDP/abs/html/sample-bashrc.html
@@ -57,11 +57,12 @@ alias wgetpdf='wget -e robots=off -nv -r -l 1 -nH -A pdf'
 alias yt-mp3='youtube-dl --ignore-config --extract-audio --audio-format mp3'
 
 # temporary
-alias p1='ssh -Y -t jagu@unix6.andrew.cmu.edu "cd ~/private/p1; tmux attach || tmux"'
+alias p2='ssh -Y -t jagu@unix6.andrew.cmu.edu "cd ~/private/p2; tmux attach -d || tmux"'
 
 # rclone aliases
 alias dsremove="find . -name '.DS_Store' -type f -delete"
 alias rclone="rclone -P"
 alias dlup="rclone copyto --include '{bg,images,dots}/**' $HOME/Downloads/ drive:misc"
+alias dldn="rclone copyto --include '{bg,images,dots}/**' drive:misc $HOME/Downloads/"
 alias cmu-copyup="rclone copy $HOME/cmu drive:cmu"
 alias cmu-syncup="rclone sync $HOME/cmu drive:cmu"
