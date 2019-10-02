@@ -19,15 +19,25 @@ runtime! macros/matchit.vim
 " tiny tweaks
 set fillchars+=vert:\                       " ceci n'est pas une pipe
 set grepprg=grep\ -nrsH
+set path=.,,**
 set softtabstop=4 shiftwidth=4 expandtab
 set statusline=%f\ %h%w%m%r%=[%{&ff}]%y[%p%%]\ %l:%-3c
+set wildignore+=*.a,*.o,*.dep
 set t_Co=16 bg=dark
 highlight Folded ctermfg=White
 highlight LineNr ctermfg=DarkGray
 
 " mappings
 nnoremap <space><space> :b <C-d>
-nnoremap <silent><BS> :b#<CR>
+nnoremap <BS> :b#<CR>
+nnoremap <S-Tab> :bprevious<CR>
+nnoremap <Tab> :bnext<CR>
+nnoremap <F3> :w<CR>
+nnoremap <silent><CR> :noh<CR>
+nnoremap <space>f :find *
+nnoremap <space>s :sfind *
+nnoremap <space>v :vert sfind *
+nnoremap <space>t :tabfind *
 
 " plugins
 call plug#begin('~/.vim/plugged')
