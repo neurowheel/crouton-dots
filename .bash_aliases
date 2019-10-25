@@ -57,7 +57,11 @@ alias wgetpdf='wget -e robots=off -nv -r -l 1 -nH -A pdf'
 alias yt-mp3='youtube-dl --ignore-config --extract-audio --audio-format mp3'
 
 # temporary
-alias p2='ssh -Y -t jagu@unix6.andrew.cmu.edu "cd ~/private/p2; tmux attach -d || tmux"'
+alias p3='ssh -Y -t jagu@unix6.andrew.cmu.edu "cd ~/private/p3; tmux attach -d || tmux"'
+function pdf-dl() {
+    local cmu_folder="$HOME/cmu"
+    wgetpdf -nc -nd -P "$cmu_folder/15410-f19/lectures" https://www.cs.cmu.edu/~410/lecture.html
+}
 
 # rclone aliases
 alias dsremove="find . -name '.DS_Store' -type f -delete"

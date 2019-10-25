@@ -19,12 +19,13 @@ runtime! macros/matchit.vim
 " tiny tweaks
 set fillchars+=vert:\                       " ceci n'est pas une pipe
 set grepprg=grep\ -nrsH
-set path=.,,**
+set path+=**
 set softtabstop=4 shiftwidth=4 expandtab
 set statusline=%f\ %h%w%m%r%=[%{&ff}]%y[%p%%]\ %l:%-3c
 set wildignore+=*.a,*.o,*.dep
 set t_Co=16 bg=dark
 highlight Folded ctermfg=White
+highlight Highlight ctermfg=Black
 highlight LineNr ctermfg=DarkGray
 
 " mappings
