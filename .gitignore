@@ -4,6 +4,7 @@
 !.bashrc
 !.config/mpv/input.conf
 !.config/mpv/mpv.conf
+!.config/mpv/script-opts/playlistmanager.conf
 !.config/ranger/rc.conf
 !.gitignore
 !.profile
