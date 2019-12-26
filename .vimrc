@@ -34,6 +34,7 @@ nnoremap <BS> :b#<CR>
 nnoremap <S-Tab> :bprevious<CR>
 nnoremap <Tab> :bnext<CR>
 nnoremap <F3> :w<CR>
+inoremap <F3> <C-o>:w<CR>
 nnoremap <silent><CR> :noh<CR>
 nnoremap <space>f :find *
 nnoremap <space>s :sfind *
