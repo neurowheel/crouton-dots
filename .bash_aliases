@@ -60,7 +60,7 @@ alias yt-mp3='youtube-dl --ignore-config --extract-audio --audio-format mp3'
 alias p4='ssh -Y -t jagu@unix6.andrew.cmu.edu "cd ~/private/p4; tmux attach -d || tmux"'
 function pdf-dl() {
     local cmu_folder="$HOME/cmu"
-    wgetpdf -nc -nd -P "$cmu_folder/15410-f19/lectures" https://www.cs.cmu.edu/~410/lecture.html
+    wgetpdf -nc -nd -P "$cmu_folder/comparc/lectures" http://users.ece.cmu.edu/~jhoe/course/ece447/S20handouts/
 }
 
 # rclone aliases
