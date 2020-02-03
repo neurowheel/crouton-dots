@@ -57,7 +57,8 @@ alias wgetpdf='wget -e robots=off -nv -r -l 1 -nH -A pdf'
 alias yt-mp3='youtube-dl --ignore-config --extract-audio --audio-format mp3'
 
 # temporary
-alias p4='ssh -Y -t jagu@unix6.andrew.cmu.edu "cd ~/private/p4; tmux attach -d || tmux"'
+alias resume='ssh -t ece "cd ~/private/lab1b-hijo; tmux attach -d || tmux"'
+alias resume-proxy='ssh -t ece-proxy "cd ~/private/lab1b-hijo; tmux attach -d || tmux"'
 function pdf-dl() {
     local cmu_folder="$HOME/cmu"
     wgetpdf -nc -nd -P "$cmu_folder/comparc/lectures" http://users.ece.cmu.edu/~jhoe/course/ece447/S20handouts/

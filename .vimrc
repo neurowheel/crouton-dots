@@ -16,9 +16,11 @@ filetype plugin indent on
 syntax enable
 runtime! macros/matchit.vim
 
-" tiny tweaks
+" tweaks
+set cinoptions=l1                           " switch-case indentation
 set fillchars+=vert:\                       " ceci n'est pas une pipe
 set grepprg=grep\ -nrsH
+set number
 set path+=**
 set softtabstop=4 shiftwidth=4 expandtab
 set statusline=%f\ %h%w%m%r%=[%{&ff}]%y[%p%%]\ %l:%-3c
@@ -49,4 +51,5 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-eunuch'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-unimpaired'
+    Plug 'vhda/verilog_systemverilog.vim'
 call plug#end()
