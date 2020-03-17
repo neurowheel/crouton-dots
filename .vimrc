@@ -5,11 +5,12 @@ set display=lastline                        " show last line
 set formatoptions+=j                        " join without comment character
 set hidden                                  " sneaky buffer action
 set ignorecase smartcase                    " ignore case if no capitals
-set incsearch                               " incremental search
+set incsearch hlsearch
 set laststatus=2                            " always show statusline
 set linebreak                               " saner word wrap
 set mouse=a                                 " heresy
 set noswapfile                              " rm *.swp
+set number
 set splitright splitbelow                   " natural split directions
 set wildmenu wildignorecase                 " case insensitive tab completion
 filetype plugin indent on
@@ -17,10 +18,9 @@ syntax enable
 runtime! macros/matchit.vim
 
 " tweaks
-set cinoptions=l1                           " switch-case indentation
+set cinoptions+=l1                          " switch-case indentation
 set fillchars+=vert:\                       " ceci n'est pas une pipe
 set grepprg=grep\ -nrsH
-set number
 set path+=**
 set softtabstop=4 shiftwidth=4 expandtab
 set statusline=%f\ %h%w%m%r%=[%{&ff}]%y[%p%%]\ %l:%-3c
