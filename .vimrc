@@ -52,4 +52,5 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-unimpaired'
     Plug 'vhda/verilog_systemverilog.vim'
+    Plug 'rust-lang/rust.vim'
 call plug#end()

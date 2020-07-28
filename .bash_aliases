@@ -56,18 +56,9 @@ alias wget4ch='wget -nd -nH -r -l 1 -H -D is2.4chan.org -A png,gif,jpg,jpeg'
 alias wgetpdf='wget -e robots=off -nv -r -l 1 -nH -A pdf'
 alias yt-mp3='youtube-dl --ignore-config --extract-audio --audio-format mp3'
 
-# temporary
-alias resume='ssh -t ece-proxy "cd ~/private/lab3-ctrlhazards; tmux attach -d || tmux"'
-function pdf-dl() {
-    local cmu_folder="$HOME/cmu"
-    wgetpdf -nc -nd -P "$cmu_folder/comparc/lectures" http://users.ece.cmu.edu/~jhoe/course/ece447/S20handouts/
-}
-
 # rclone aliases
 alias dsremove="find . -name '.DS_Store' -type f -delete"
 alias rclone="rclone -P"
 alias dlup="rclone copyto --include '{bg,images,dots}/**' $HOME/Downloads/ drive:misc"
 alias dldn="rclone copyto --include '{bg,images,dots}/**' drive:misc $HOME/Downloads/"
-alias cmu-copydn="rclone --drive-skip-gdocs copy drive:cmu $HOME/cmu"
-alias cmu-syncup="rclone --drive-skip-gdocs sync $HOME/cmu drive:cmu"
 alias muup="rclone -P copy ~/Music/iTunes/iTunes\ Media/Music/ dropbox:music/"
