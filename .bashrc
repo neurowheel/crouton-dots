@@ -38,10 +38,3 @@ bind "set completion-ignore-case on"
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 [ -f ~/.bash_functions ] && . ~/.bash_functions
-
-############################################################################
-# machine-specific
-############################################################################
-
-[ -f ~/.bashrc_andrew ] && . ~/.bashrc_andrew
-[ -f ~/.bashrc_wsl ] && . ~/.bashrc_wsl

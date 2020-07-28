@@ -9,6 +9,7 @@
 !.config/i3/config
 !.config/mpv/input.conf
 !.config/mpv/mpv.conf
+!.config/mpv/script-opts/playlistmanager.conf
 !.config/ranger/rc.conf
 !.config/ranger/rifle.conf
 !.config/ranger/scope.sh
