@@ -1,7 +1,7 @@
 # general aliases
 
 # more ls, cd aliases
-alias ll='ls -hal'
+alias ll='ls -halF'
 alias la='ls -A'
 alias lh='ls -d .*'
 alias cd..='cd ..'
