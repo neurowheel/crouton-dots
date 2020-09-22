@@ -51,15 +51,3 @@ mktar() { tar cvzf "${1%%/}.tgz"  "${1%%/}/"; }
 # from http://tldp.org/LDP/abs/html/sample-bashrc.html
 # Create a ZIP archive of a file or folder.
 mkzip() { zip -r "${1%%/}.zip" "$1" ; }
-
-# misc
-alias wget4ch='wget -nd -nH -r -l 1 -H -D is2.4chan.org -A png,gif,jpg,jpeg'
-alias wgetpdf='wget -e robots=off -nv -r -l 1 -nH -A pdf'
-alias yt-mp3='youtube-dl --ignore-config --extract-audio --audio-format mp3'
-
-# rclone aliases
-alias dsremove="find . -name '.DS_Store' -type f -delete"
-alias rclone="rclone -P"
-alias dlup="rclone copyto --include '{bg,images,dots}/**' $HOME/Downloads/ drive:misc"
-alias dldn="rclone copyto --include '{bg,images,dots}/**' drive:misc $HOME/Downloads/"
-alias muup="rclone -P copy ~/Music/iTunes/iTunes\ Media/Music/ dropbox:music/"

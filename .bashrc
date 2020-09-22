@@ -37,6 +37,7 @@ bind "set completion-ignore-case on"
 ############################################################################
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
+[ -f ~/.bash_aliases_local ] && . ~/.bash_aliases_local
 [ -f ~/.bash_functions ] && . ~/.bash_functions
 [ -f ~/.bash_vm ] && . ~/.bash_vm
 export BASH_SILENCE_DEPRECATION_WARNING=1

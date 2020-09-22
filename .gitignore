@@ -1,5 +1,6 @@
 *
 !.bash_aliases
+!.bash_aliases_local
 !.bash_functions
 !.bashrc
 !.config/mpv/input.conf
