@@ -29,6 +29,7 @@ set t_Co=16 bg=dark
 highlight Folded ctermfg=White
 highlight Highlight ctermfg=Black
 highlight LineNr ctermfg=DarkGray
+" let g:rustfmt_autosave = 1
 
 " mappings
 nnoremap <space><space> :b <C-d>
@@ -44,13 +45,18 @@ nnoremap <space>v :vert sfind *
 nnoremap <space>t :tabfind *
 
 " plugins
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 call plug#begin('~/.vim/plugged')
-    Plug 'romainl/vim-qf'
+    " Plug 'romainl/vim-qf'
     Plug 'romainl/vim-qlist'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-eunuch'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-unimpaired'
-    Plug 'vhda/verilog_systemverilog.vim'
-    Plug 'rust-lang/rust.vim'
+    " Plug 'vhda/verilog_systemverilog.vim'
+    " Plug 'rust-lang/rust.vim'
 call plug#end()
