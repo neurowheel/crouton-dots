@@ -12,6 +12,7 @@ alias q='exit'
 alias r='ranger'
 alias ta='tmux attach'
 alias gr='grep -r'
+alias sshv="ssh vm -t 'tmux attach || tmux'"
 
 # lazy git
 alias gb='git branch -vv'
