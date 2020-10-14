@@ -9,7 +9,6 @@ set incsearch hlsearch
 set laststatus=2                            " always show statusline
 set linebreak                               " saner word wrap
 set mouse=a                                 " heresy
-set noswapfile                              " rm *.swp
 set number
 set splitright splitbelow                   " natural split directions
 set wildmenu wildignorecase                 " case insensitive tab completion
@@ -60,3 +59,9 @@ call plug#begin('~/.vim/plugged')
     " Plug 'vhda/verilog_systemverilog.vim'
     " Plug 'rust-lang/rust.vim'
 call plug#end()
+
+" backup, swap, and undo
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
+set undofile
