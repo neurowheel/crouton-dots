@@ -9,3 +9,10 @@ alias rclone="rclone -P"
 alias dlup="rclone copyto --include '{bg,images,dots}/**' $HOME/Downloads/ drive:misc"
 alias dldn="rclone copyto --include '{bg,images,dots}/**' drive:misc $HOME/Downloads/"
 alias muup="rclone -P copy ~/Music/iTunes/iTunes\ Media/Music/ dropbox:music/"
+
+# non-sensitive work aliases
+alias dotpull='scp -T vm:".bash_aliases .bashrc .tmux.conf .vimrc" ~'
+alias dotpush='scp .bash_aliases .bashrc .tmux.conf .vimrc vm:~'
+alias notepull='scp vm:~/notes.md ~/notes-`date +%Y-%m-%d-%H%m`.md'
+alias notepush='scp ~/notes.md vm:~/notes-`date +%Y-%m-%d-%H%m`.md; ssh vm -T "ls notes*"'
+alias homepull='rsync -irc --exclude="/work/" --exclude="notes*.md" --exclude="/.vim/" vm:~/ ~/vm-home/'
