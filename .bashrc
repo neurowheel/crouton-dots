@@ -33,11 +33,8 @@ bind "set completion-ignore-case on"
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 ############################################################################
-# aliases
+# includes
 ############################################################################
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
-[ -f ~/.bash_aliases_local ] && . ~/.bash_aliases_local
-[ -f ~/.bash_functions ] && . ~/.bash_functions
-[ -f ~/.bash_vm ] && . ~/.bash_vm
-export BASH_SILENCE_DEPRECATION_WARNING=1
+[ -f ~/.bashrc_local ] && . ~/.bashrc_local

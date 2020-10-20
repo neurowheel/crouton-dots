@@ -1,8 +1,7 @@
 *
 !.bash_aliases
-!.bash_aliases_local
-!.bash_functions
 !.bashrc
+!.bashrc_local
 !.config/mpv/input.conf
 !.config/mpv/mpv.conf
 !.config/mpv/script-opts/playlistmanager.conf
