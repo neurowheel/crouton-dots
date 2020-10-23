@@ -20,7 +20,9 @@ runtime! macros/matchit.vim
 set cinoptions+=l1                          " switch-case indentation
 set fillchars+=vert:\                       " ceci n'est pas une pipe
 set grepprg=grep\ -nrsH
+set path+=include;
 set path+=**
+set tags+=tags;
 set softtabstop=4 shiftwidth=4 expandtab
 set statusline=%f\ %h%w%m%r%=[%{&ff}]%y[%p%%]\ %l:%-3c
 set wildignore+=*.a,*.o,*.dep
