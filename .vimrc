@@ -53,14 +53,21 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.vim/plugged')
-    " Plug 'romainl/vim-qf'
+    Plug 'romainl/vim-qf'
     Plug 'romainl/vim-qlist'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-eunuch'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-unimpaired'
-    " Plug 'vhda/verilog_systemverilog.vim'
-    " Plug 'rust-lang/rust.vim'
+    " language specific
+    Plug 'vhda/verilog_systemverilog.vim', { 'for' : 'systemverilog' }
+    Plug 'rust-lang/rust.vim', { 'for' : 'rust' }
+    Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+    " trying these out
+    Plug 'mhinz/vim-signify'
+    Plug 'tpope/vim-dispatch'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-surround'
 call plug#end()
 
 " backup, swap, and undo
