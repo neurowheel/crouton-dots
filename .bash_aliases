@@ -15,10 +15,23 @@ alias gr='grep -r'
 
 # lazy git
 alias gb='git branch -vv'
-alias gc='git checkout'
 alias gd='git diff'
-alias gl='git log --pretty=format:"%C(yellow)%h %C(green)%an %C(reset)%s"'
+alias gl='git log --pretty=format:"%C(yellow)%h %C(green)%an%C(auto)%d %C(reset)%s %C(green)(%ar)"'
 alias gs='git status'
+
+# lazier git
+alias ga='git add'
+alias gc='git commit'
+alias gcanoe='git commit --amend --no-edit'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gdc='gd --cached'
+alias gds='gd --stat'
+alias gfp='git format-patch -1'
+alias gluh='gl @{u}..HEAD'
+alias gsh='git show'
+alias gshs='git show --stat'
+alias gst='git stash'
 
 # from http://tldp.org/LDP/abs/html/sample-bashrc.html
 extract()
