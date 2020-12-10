@@ -20,8 +20,7 @@ runtime! macros/matchit.vim
 set cinoptions+=l1                          " switch-case indentation
 set fillchars+=vert:\                       " ceci n'est pas une pipe
 set grepprg=grep\ -nrsH
-set path+=include;
-set path+=**
+set path+=include;,**
 set tags+=tags;
 set softtabstop=4 shiftwidth=4 expandtab
 set statusline=%f\ %h%w%m%r%=[%{&ff}]%y[%p%%]\ %l:%-3c
@@ -65,8 +64,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
     " trying these out
     Plug 'mhinz/vim-signify'
+    if has("patch-8.1.1564")|set signcolumn=number|endif
+    nnoremap <space>u :SignifyHunkUndo<CR>
     Plug 'tpope/vim-dispatch'
     Plug 'tpope/vim-fugitive'
+    nnoremap <space>gd :Gvdiffsplit<CR>
+    nnoremap <space>gb :Gblame<CR>
     Plug 'tpope/vim-surround'
 call plug#end()
 
