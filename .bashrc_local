@@ -16,5 +16,5 @@ alias muup="rclone -P copy ~/Music/iTunes/iTunes\ Media/Music/ dropbox:music/"
 alias sshv="ssh-add -K ~/.ssh/id_rsa; ssh vm -t 'tmux attach || tmux'"
 alias dotpull='scp -T vm:".bash_aliases .bashrc .tmux.conf .vimrc" ~'
 alias dotpush='scp .bash_aliases .bashrc .tmux.conf .vimrc vm:~'
-alias notepush='scp ~/notes.md vm:~/notes/notes-`date +%Y-%m-%d-%H%m`.md; ssh vm -T "ls notes"'
 alias homepull='rsync -irc vm:~/ ~/vm-home/ --files-from=:.vm-files'
+alias cpnotes='cp notes.md Google\ Drive\ File\ Stream/My\ Drive/'

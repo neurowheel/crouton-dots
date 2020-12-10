@@ -32,6 +32,7 @@ alias gluh='gl @{u}..HEAD'
 alias gsh='git show'
 alias gshs='git show --stat'
 alias gst='git stash'
+alias gsls='git stash list --stat'
 
 # from http://tldp.org/LDP/abs/html/sample-bashrc.html
 extract()
