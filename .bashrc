@@ -32,6 +32,10 @@ bind "set completion-ignore-case on"
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# unix-filename-rubout
+stty werase undef
+bind '"\C-w": unix-filename-rubout'
+
 ############################################################################
 # includes
 ############################################################################
