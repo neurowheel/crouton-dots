@@ -50,11 +50,8 @@ nnoremap <space>v :vert sfind *
 nnoremap <space>t :tabfind *
 
 " plugins
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+" wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if !empty(glob('~/.vim/autoload/plug.vim'))
 call plug#begin('~/.vim/plugged')
     Plug 'romainl/vim-qf'
     Plug 'romainl/vim-qlist'
@@ -76,9 +73,16 @@ call plug#begin('~/.vim/plugged')
     nnoremap <space>gb :Gblame<CR>
     Plug 'tpope/vim-surround'
 call plug#end()
+endif
 
 " backup, swap, and undo
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
-set undodir=~/.vim/undo//
-set undofile
+if isdirectory($HOME . '/.vim/backup')
+    set backupdir=~/.vim/backup//
+endif
+if isdirectory($HOME . '/.vim/swap')
+    set directory=~/.vim/swap//
+endif
+if isdirectory($HOME . '/.vim/undo')
+    set undodir=~/.vim/undo//
+    set undofile
+endif
