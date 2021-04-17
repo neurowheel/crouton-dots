@@ -10,9 +10,10 @@ alias yt-mp3='youtube-dl --ignore-config --extract-audio --audio-format mp3'
 # rclone aliases
 alias dsremove="find . -name '.DS_Store' -type f -delete"
 alias rclone="rclone -P"
-alias dlup="rclone copyto --include '{bg,images,dots}/**' $HOME/Downloads/ drive:misc"
-alias dldn="rclone copyto --include '{bg,images,dots}/**' drive:misc $HOME/Downloads/"
+alias dlup="rclone copyto --include '{bg,bkmks,dottxt,images}/**' $HOME/Downloads/ drive:misc"
+alias dldn="rclone copyto --include '{bg,bkmks,dottxt,images}/**' drive:misc $HOME/Downloads/"
 alias muup="rclone -P copy ~/Music/iTunes/iTunes\ Media/Music/ dropbox:music/"
+alias binup="rclone -P copy ~/bin/ drive:misc/scripts/"
 
 # non-sensitive work aliases
 alias sshv="ssh-add -K ~/.ssh/id_rsa; ssh vm -t 'tmux attach || tmux'"
