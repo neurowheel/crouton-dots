@@ -14,10 +14,3 @@ alias dlup="rclone copyto --include '{bg,bkmks,dottxt,images}/**' $HOME/Download
 alias dldn="rclone copyto --include '{bg,bkmks,dottxt,images}/**' drive:misc $HOME/Downloads/"
 alias muup="rclone -P copy ~/Music/iTunes/iTunes\ Media/Music/ dropbox:music/"
 alias binup="rclone -P copy ~/bin/ drive:misc/scripts/"
-
-# non-sensitive work aliases
-alias sshv="ssh-add -K ~/.ssh/id_rsa; ssh vm -t 'tmux attach || tmux'"
-alias dotpull='scp -T vm:".bash_aliases .bashrc .tmux.conf .vimrc" ~'
-alias dotpush='scp .bash_aliases .bashrc .tmux.conf .vimrc vm:~'
-alias homepull='rsync -irc vm:~/ ~/vm-home/ --files-from=:.vm-files'
-alias cpnotes='cp notes.md Google\ Drive\ File\ Stream/My\ Drive/'
